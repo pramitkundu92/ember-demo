@@ -1,0 +1,11 @@
+<h3>List of Users in the system</h3>
+
+<ul>
+    {{#each model.tableData.data as |user|}}
+        {{#link-to 'users.user' user.id}}
+            <li>{{user.name}}</li>
+        {{/link-to}}
+    {{/each}}
+</ul>
+
+{{outlet}}

@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-11">
+        {{app-grid tableData=model.notes add="addNewNote" remove="removeNote"}}
+    </div>
+</div>    
+
+<div class="footer">
+    <button class="btn btn-primary" {{action "saveNotes"}}>Save</button>
+</div>
+
+{{outlet}}

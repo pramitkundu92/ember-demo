@@ -1,0 +1,51 @@
+<div class="grid panel panel-default row">
+    <div class="panel-heading col-md-12">
+        <h4 class="col col-md-5 title">{{tableData.title}}</h4>
+        <button class="col col-md-2 btn btn-info" {{action "add"}}>Add New Rows</button>
+    </div>
+    <div class="panel-body col-md-12">
+        {{#if tableData.data.length}}
+            <div class="table row">
+                <div class="header col-md-12">
+                    <div class="row">
+                        {{#each tableData.columns as |col colIndex|}}
+                            <div class={{colWidth}}>{{col.name}}</div>
+                        {{/each}}
+                        <div class="cell actions col-md-3">Actions</div>
+                    </div>
+                </div>
+                <div class="body col-md-12">
+                    {{#each tableData.data as |row rowIndex|}}
+                        {{#if row.editable}}
+                            <div class="col-md-5">
+                                <form>
+                                    {{#each tableData.columns as |col colIndex|}}
+                                        {{form-field for=col.name change="userInputRecvd"}}
+                                    {{/each}}
+                                </form>
+                                <div class="row">
+                                    <button class="btn btn-info col-md-5" {{action "save" row rowIndex}}>Save</button>
+                                    <div class="col-md-2">&nbsp;</div>
+                                    <button class="btn btn-danger col-md-5">Cancel</button>
+                                </div>
+                            </div>    
+                        {{else}}                            
+                            <div class="row">
+                                {{#each tableData.columns as |col colIndex|}}
+                                    <div class={{colWidth}}>{{get-value row col.name}}</div>
+                                {{/each}}
+                                <div class="cell actions col-md-3 row">
+                                    <button class="btn btn-danger col-md-5" {{action "remove" row}}>Remove</button>
+                                    <div class="col-md-2">&nbsp;</div>
+                                    <button class="btn btn-warning col-md-5">Edit</button>
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        {{else}}
+            <div>No data loaded</div>
+        {{/if}}
+    </div>
+</div>

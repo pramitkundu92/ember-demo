@@ -1,0 +1,57 @@
+body {
+    padding: 0 50px;
+}
+.table {
+    padding: 8px;
+}
+.table .header {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.table .row {
+    height: 35px !important;
+    border-bottom: 1px solid #e0e0e0;
+}
+.table .cell {
+    display: inline-block;
+    padding: 6px;
+    min-width: 30px;
+    word-break: break-all;
+}
+.table .cell.actions {
+    padding: 4px;
+    position: relative;
+}
+.table .cell.actions button {
+    height: 25px;
+    padding: 0 2px;
+}
+.title {
+    word-break: break-all;
+    margin: 0;
+}
+.nav a {
+    text-decoration: none;
+}
+a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+}
+nav {
+    margin-bottom: 0 !important;
+}
+.grid .panel-heading {
+    padding: 3px 10px;
+    height: 40px;
+}
+.grid .panel-heading h4 {
+    padding: 7px 0;
+}
+.form-label {
+    text-transform: capitalize;
+}
